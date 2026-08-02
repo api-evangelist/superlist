@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: searched
+source: live probe of /.well-known/ endpoints (2026-07-21)
+host: https://app.superlist.com
+documents:
+  - path: /.well-known/oauth-authorization-server   # RFC 8414
+    status: 200
+    file: superlist-oauth-authorization-server.json
+  - path: /.well-known/oauth-protected-resource      # RFC 9728
+    status: 200
+    file: superlist-oauth-protected-resource.json
+  - path: /.well-known/openid-configuration           # OIDC-style discovery (returns OAuth AS metadata)
+    status: 200
+    file: superlist-openid-configuration.json
+  - path: /.well-known/security.txt                    # RFC 9116
+    status: 404
+  - path: /.well-known/api-catalog                     # RFC 9727
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+other_hosts:
+  - host: https://www.superlist.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404

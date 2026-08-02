@@ -1,0 +1,28 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  live probe of https://app.superlist.com/mcp and /.well-known/* +
+  https://help.superlist.com/en/articles/658028-superlist-mcp-server
+surface: MCP server (Streamable HTTP), not a REST API
+authentication:
+  style: oauth2
+  detail: OAuth 2.0 authorization_code + PKCE (S256), dynamic client registration; bearer token in Authorization header
+  ref: authentication/superlist-authentication.yml
+idempotency:
+  supported: false
+  detail: No idempotency-key header or documented idempotency contract observed on the MCP surface.
+pagination:
+  supported: unknown
+  detail: Not documented publicly; list retrieval tools (get_lists, search) do not publish pagination params.
+identifiers:
+  detail: Tasks and lists are referenced by opaque IDs; get_task/get_list/fetch operate by ID.
+error_envelope:
+  shape: '{"errors":[{"code":..., "status":..., "title":..., "detail":...}]}'
+  example_observed: '{"errors":[{"code":"unauthorized","status":"401","title":"Unauthorized","detail":"Missing authorization header"}]}'
+  note: JSON:API-style errors array; not RFC 9457 application/problem+json.
+  ref: errors/superlist-problem-types.yml
+rate_limiting:
+  detail: No public rate-limit headers documented. Free plan enforces resource limits (5 lists, 5 members per list, no sublists).
+versioning:
+  detail: MCP endpoint is unversioned; app releases follow semver (see lifecycle/, changelog/).
+  ref: lifecycle/superlist-lifecycle.yml

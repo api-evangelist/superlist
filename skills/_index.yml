@@ -1,0 +1,19 @@
+generated: '2026-07-21'
+method: generated
+source: >-
+  Grounded in the real Superlist MCP tool list documented at
+  https://help.superlist.com/en/articles/658028-superlist-mcp-server (mcp/superlist-mcp.yml)
+api: mcp/superlist-mcp.yml
+skills:
+  - file: superlist-connect-and-authenticate.md
+    name: Connect an agent to Superlist over MCP
+    api: mcp/superlist-mcp.yml
+    operations: [whoami]
+  - file: superlist-capture-and-organize.md
+    name: Capture and organize tasks into lists
+    api: mcp/superlist-mcp.yml
+    operations: [add_list, add_task, add_label, move_task, get_lists]
+  - file: superlist-daily-planning.md
+    name: Run a daily planning review
+    api: mcp/superlist-mcp.yml
+    operations: [today, inbox, search, update_task, complete_task, assign_task]

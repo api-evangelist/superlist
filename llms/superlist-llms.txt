@@ -1,0 +1,40 @@
+# Superlist
+
+> Superlist is an AI-powered task and list management app from the team behind Wunderlist,
+> combining to-dos, notes, and lightweight project planning across Mac, Web, iOS, and Android.
+> Its programmatic surface is an official hosted Model Context Protocol (MCP) server that lets
+> Claude, ChatGPT, Cursor, and any MCP-compatible agent manage tasks and lists over natural
+> language, secured with OAuth 2.0 (PKCE + dynamic client registration). Superlist does not
+> publish a traditional public REST API or OpenAPI.
+
+## Agent surface (MCP)
+- [Superlist MCP server](https://app.superlist.com/mcp): Remote Streamable HTTP MCP endpoint (OAuth 2.0).
+- [MCP homepage](https://www.superlist.com/mcp): Overview and connection instructions.
+- [MCP setup guide](https://help.superlist.com/en/articles/658028-superlist-mcp-server): Verbatim setup docs.
+- Tools: add_task, get_task, update_task, complete_task, delete_task, move_task, assign_task,
+  unassign_task, add_label, remove_label, add_list, get_list, get_lists, update_list, delete_list,
+  share_list, unshare_list, today, inbox, search, fetch, whoami.
+
+## Auth / discovery
+- [OAuth authorization server metadata](https://app.superlist.com/.well-known/oauth-authorization-server) (RFC 8414)
+- [OAuth protected resource metadata](https://app.superlist.com/.well-known/oauth-protected-resource) (RFC 9728)
+- Authorization: https://app.superlist.com/oauth/authorize | Token: https://app.superlist.com/oauth/token | Register: https://app.superlist.com/oauth/register
+
+## Docs
+- [Help Center](https://help.superlist.com/en/)
+- [Updates / Changelog](https://www.superlist.com/updates)
+- [Pricing](https://www.superlist.com/pricing)
+- [Open Source](https://www.superlist.com/open-source)
+- [GitHub organization](https://github.com/superlistapp)
+- [Feedback / Roadmap](https://feedback.superlist.com/)
+
+## Repo artifacts
+- MCP manifest: mcp/superlist-mcp.yml
+- Authentication: authentication/superlist-authentication.yml
+- Well-known index: well-known/superlist-well-known.yml
+- Conformance: conformance/superlist-conformance.yml
+- Conventions: conventions/superlist-conventions.yml
+- Errors: errors/superlist-problem-types.yml
+- Lifecycle: lifecycle/superlist-lifecycle.yml
+- Changelog: changelog/superlist-changelog.yml
+- Agent Skills: skills/_index.yml

@@ -1,0 +1,21 @@
+generated: '2026-07-21'
+method: searched
+source: live probe of https://app.superlist.com/mcp (2026-07-21)
+format: json-api-errors     # NOT RFC 9457; errors[] array of {code,status,title,detail}
+envelope: '{"errors":[{"code":..., "status":..., "title":..., "detail":...}]}'
+problems:
+  - status: 401
+    code: unauthorized
+    title: Unauthorized
+    detail: Missing authorization header
+    remediation: Present a valid OAuth 2.0 bearer token in the Authorization header (see authentication/superlist-authentication.yml).
+    observed_on: https://app.superlist.com/mcp
+  - status: 404
+    code: not_found
+    title: Not Found
+    detail: Resource not found
+    remediation: Verify the request path / resource ID.
+    observed_on: https://app.superlist.com/.well-known/mcp
+notes: >-
+  Only the two error responses above were directly observed from unauthenticated probes.
+  The full MCP tool-level error catalog is not publicly documented.

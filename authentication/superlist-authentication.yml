@@ -1,0 +1,34 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://app.superlist.com/.well-known/oauth-authorization-server +
+  https://help.superlist.com/en/articles/658028-superlist-mcp-server
+docs: https://help.superlist.com/en/articles/658028-superlist-mcp-server
+summary:
+  types: [oauth2]
+  oauth2_flows: [authorizationCode]
+  api_key_in: []
+  surface: MCP server (https://app.superlist.com/mcp)
+  notes: >-
+    Superlist exposes no traditional REST API key surface. Programmatic access is via the
+    hosted MCP server, authenticated with OAuth 2.0 using PKCE (S256) and dynamic client
+    registration. Bearer tokens are presented in the Authorization header (per RFC 9728
+    protected-resource metadata: bearer_methods_supported = ["header"]).
+schemes:
+  - name: OAuth2
+    type: oauth2
+    source: https://app.superlist.com/.well-known/oauth-authorization-server
+    issuer: https://app.superlist.com
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://app.superlist.com/oauth/authorize
+        tokenUrl: https://app.superlist.com/oauth/token
+        pkce: S256
+    dynamic_client_registration: https://app.superlist.com/oauth/register
+    grant_types_supported: [authorization_code, refresh_token]
+    response_types_supported: [code]
+    token_endpoint_auth_methods_supported: [none, client_secret_basic, client_secret_post]
+    protected_resource: https://app.superlist.com/mcp
+    protected_resource_metadata: https://app.superlist.com/.well-known/oauth-protected-resource
+    bearer_methods_supported: [header]
+    scopes_advertised: []   # authorization-server metadata does not advertise a scopes_supported list

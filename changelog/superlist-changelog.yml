@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.superlist.com/updates
+scheme: semver
+current_version: '1.56.0'
+entries:
+  - version: '1.56.0'
+    date: '2026-06-27'
+    breaking: false
+    highlights:
+      - Multi-select / bulk actions for selecting multiple items
+      - Faster app launch
+      - Meeting Notes on iOS and Android
+  - version: '1.55.0'
+    date: '2026-05-21'
+    breaking: false
+    highlights:
+      - Activity Heatmaps to visualize task activity over time
+      - One-tap PDF and image previews on iOS
+      - Easier task movement between lists
+  - version: '1.54.0'
+    date: '2026-05-05'
+    breaking: false
+    highlights:
+      - Launched the Superlist MCP server (connect Claude and other AI assistants)
+      - Talk improvements with automatic language detection
+      - Preview-before-save
+  - version: '1.53.0'
+    date: '2026-04-16'
+    breaking: false
+    highlights:
+      - Sorting options across all lists (alphabetical, creation date, due date, priority, assignee)
+      - Automatic filtering of non-task content when sorting is active

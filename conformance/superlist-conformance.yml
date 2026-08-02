@@ -1,0 +1,30 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  live probe of https://app.superlist.com/.well-known/* +
+  https://help.superlist.com/en/articles/658028-superlist-mcp-server
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: authorization server metadata at /.well-known/oauth-authorization-server (RFC 8414)
+  - id: rfc8414-oauth-authorization-server-metadata
+    conforms: true
+    evidence: /.well-known/oauth-authorization-server returns 200 with issuer/endpoints
+  - id: rfc9728-oauth-protected-resource-metadata
+    conforms: true
+    evidence: /.well-known/oauth-protected-resource returns 200 mapping the MCP resource to its AS
+  - id: rfc7636-pkce
+    conforms: true
+    evidence: code_challenge_methods_supported = ["S256"]
+  - id: rfc7591-dynamic-client-registration
+    conforms: true
+    evidence: registration_endpoint present at https://app.superlist.com/oauth/register
+  - id: openid-connect-discovery
+    conforms: partial
+    evidence: /.well-known/openid-configuration returns 200 but serves OAuth AS metadata (no full OIDC claims/userinfo advertised)
+  - id: model-context-protocol
+    conforms: true
+    evidence: official hosted MCP server over Streamable HTTP at https://app.superlist.com/mcp
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: MCP error envelope observed as {"errors":[{code,status,title,detail}]}, not application/problem+json

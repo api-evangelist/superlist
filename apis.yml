@@ -1,8 +1,28 @@
 aid: superlist
 name: Superlist
-description: 'Superlist is a company surfaced as a portfolio company of eqt-ventures and added to the
-  API Evangelist network as a stub for enrichment. Sector: project-management-sector. This profile is
-  a lead awaiting the enrichment pipeline.'
+description: >-
+  Superlist is an AI-powered task and list management application from the team behind
+  Wunderlist, combining to-dos, notes, and lightweight project planning in a single
+  collaborative workspace across Mac, Web, iOS, and Android. Its primary programmatic
+  surface is an official hosted Model Context Protocol (MCP) server that lets Claude,
+  ChatGPT, Cursor, and any MCP-compatible agent read and manage tasks, lists, labels,
+  and views over natural language. The MCP endpoint is secured with a standards-based
+  OAuth 2.0 authorization server (PKCE, dynamic client registration, RFC 8414 / RFC 9728
+  discovery). Superlist does not publish a traditional public REST API or OpenAPI; the
+  MCP server is the agent-native integration layer.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://framerusercontent.com/assets/xlouachsGTVuJaHXsYmxxI66e2s.png
 url: https://raw.githubusercontent.com/api-evangelist/superlist/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,16 +32,93 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
 - Project Management Sector
-apis: []
+- Task Management
+- Productivity
+- To-Do Lists
+- Collaboration
+- MCP
+- Agents
+- AI Assistant
+apis:
+- name: Superlist MCP Server
+  description: >-
+    Official hosted Model Context Protocol (MCP) server that acts as the task layer for
+    AI agents. Exposes tools to add, get, update, complete, delete, move, assign, label,
+    and search tasks and lists, plus today/inbox views and identity, secured with OAuth 2.0.
+  humanURL: https://www.superlist.com/mcp
+  baseURL: https://app.superlist.com/mcp
+  tags:
+  - MCP
+  - Tasks
+  - Lists
+  - Agents
+  properties:
+  - type: MCPServer
+    url: mcp/superlist-mcp.yml
+  - type: Documentation
+    url: https://help.superlist.com/en/articles/658028-superlist-mcp-server
+  - type: Authentication
+    url: authentication/superlist-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/superlist-domain-security.yml
 - type: Website
   url: https://superlist.com
+- type: DeveloperPortal
+  url: https://www.superlist.com/mcp
+- type: Documentation
+  url: https://help.superlist.com/en/articles/658028-superlist-mcp-server
+- type: Support
+  url: https://help.superlist.com/en/
+- type: Blog
+  url: https://www.superlist.com/blog
+- type: ChangeLog
+  url: https://www.superlist.com/updates
+- type: Roadmap
+  url: https://feedback.superlist.com/
+- type: Pricing
+  url: https://www.superlist.com/pricing
+- type: SignUp
+  url: https://app.superlist.com/
+- type: Login
+  url: https://app.superlist.com/
+- type: TermsOfService
+  url: https://www.superlist.com/terms
+- type: PrivacyPolicy
+  url: https://www.superlist.com/privacy-policy
+- type: GitHubOrganization
+  url: https://github.com/superlistapp
+- type: MCPServer
+  url: mcp/superlist-mcp.yml
+- type: Authentication
+  url: authentication/superlist-authentication.yml
+- type: WellKnown
+  url: well-known/superlist-well-known.yml
+- type: Conformance
+  url: conformance/superlist-conformance.yml
+- type: LLMsTxt
+  url: llms/superlist-llms.txt
+- type: Lifecycle
+  url: lifecycle/superlist-lifecycle.yml
+- type: Conventions
+  url: conventions/superlist-conventions.yml
+- type: ErrorCatalog
+  url: errors/superlist-problem-types.yml
+- type: ChangeLog
+  url: changelog/superlist-changelog.yml
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 17
+  pass: local-v1

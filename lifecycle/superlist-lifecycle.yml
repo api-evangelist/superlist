@@ -1,0 +1,20 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.superlist.com/updates
+versioning:
+  scheme: semver          # app release versions, e.g. 1.56.0
+  current: '1.56.0'
+  docs: https://www.superlist.com/updates
+  notes: >-
+    Versioning is expressed as application release versions on the public "Updates" page.
+    The MCP server is an unversioned hosted endpoint (no path/header version observed).
+changelog: https://www.superlist.com/updates
+deprecation:
+  policy_url: null
+  sunset_header: null
+  notes: No published API deprecation policy or RFC 8594 Sunset/Deprecation header support found.
+sla:
+  url: null
+  uptime_target: null
+status_page: null         # no status.superlist.com or public status page found
+deprecated_operations: []
