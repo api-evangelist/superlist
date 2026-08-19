@@ -5,7 +5,7 @@ source: https://help.superlist.com/en/articles/658028-superlist-mcp-server
 homepage: https://www.superlist.com/mcp
 server:
   name: superlist
-  transport: http            # remote Streamable HTTP
+  transport: http
   url: https://app.superlist.com/mcp
 auth:
   type: oauth2
@@ -17,64 +17,64 @@ auth:
   token_endpoint: https://app.superlist.com/oauth/token
   registration_endpoint: https://app.superlist.com/oauth/register
   protected_resource_metadata: https://app.superlist.com/.well-known/oauth-protected-resource
-  notes: >-
-    Users sign in directly to Superlist via a browser-based OAuth flow; the AI tool never
-    sees the password. Access is limited to the data the account already has and is
-    revocable from the connector settings. Probe of the MCP endpoint returns HTTP 401
-    ("Missing authorization header") when no bearer token is presented.
+  notes: Users sign in directly to Superlist via a browser-based OAuth flow; the AI tool never sees the
+    password. Access is limited to the data the account already has and is revocable from the connector
+    settings. Probe of the MCP endpoint returns HTTP 401 ("Missing authorization header") when no bearer
+    token is presented.
 tools:
-  # Task management
-  - name: add_task
-    description: Create a new task, optionally in a specific list.
-  - name: get_task
-    description: Retrieve a single task by ID.
-  - name: update_task
-    description: Update a task's fields (title, due date, notes, etc.).
-  - name: complete_task
-    description: Mark a task as complete.
-  - name: delete_task
-    description: Delete a task.
-  - name: move_task
-    description: Move a task to a different list.
-  - name: assign_task
-    description: Assign a task to a member.
-  - name: unassign_task
-    description: Remove an assignee from a task.
-  # Labels
-  - name: add_label
-    description: Add a label to a task.
-  - name: remove_label
-    description: Remove a label from a task.
-  # Lists
-  - name: add_list
-    description: Create a new list, optionally with tasks.
-  - name: get_list
-    description: Retrieve a single list by ID.
-  - name: get_lists
-    description: Retrieve all lists.
-  - name: update_list
-    description: Update a list's properties.
-  - name: delete_list
-    description: Delete a list.
-  - name: share_list
-    description: Share a list with a member.
-  - name: unshare_list
-    description: Stop sharing a list with a member.
-  # Views
-  - name: today
-    description: Return assigned tasks due today or earlier.
-  - name: inbox
-    description: Return inbox tasks.
-  # Search & retrieval
-  - name: search
-    description: Query tasks and lists.
-  - name: fetch
-    description: Retrieve full content of an item by ID.
-  # Identity
-  - name: whoami
-    description: Return the authenticated user's information.
+- name: add_task
+  description: Create a new task, optionally in a specific list.
+- name: get_task
+  description: Retrieve a single task by ID.
+- name: update_task
+  description: Update a task's fields (title, due date, notes, etc.).
+- name: complete_task
+  description: Mark a task as complete.
+- name: delete_task
+  description: Delete a task.
+- name: move_task
+  description: Move a task to a different list.
+- name: assign_task
+  description: Assign a task to a member.
+- name: unassign_task
+  description: Remove an assignee from a task.
+- name: add_label
+  description: Add a label to a task.
+- name: remove_label
+  description: Remove a label from a task.
+- name: add_list
+  description: Create a new list, optionally with tasks.
+- name: get_list
+  description: Retrieve a single list by ID.
+- name: get_lists
+  description: Retrieve all lists.
+- name: update_list
+  description: Update a list's properties.
+- name: delete_list
+  description: Delete a list.
+- name: share_list
+  description: Share a list with a member.
+- name: unshare_list
+  description: Stop sharing a list with a member.
+- name: today
+  description: Return assigned tasks due today or earlier.
+- name: inbox
+  description: Return inbox tasks.
+- name: search
+  description: Query tasks and lists.
+- name: fetch
+  description: Retrieve full content of an item by ID.
+- name: whoami
+  description: Return the authenticated user's information.
 clients_supported:
-  - Claude
-  - ChatGPT
-  - Cursor
-  - any MCP-compatible agent
+- Claude
+- ChatGPT
+- Cursor
+- any MCP-compatible agent
+deployment:
+  mode: remote
+  endpoint: https://app.superlist.com/mcp
+  verified: probed
+  probe: gated
+  checked: '2026-08-12'
+  source: catalog MCP census
