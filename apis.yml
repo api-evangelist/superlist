@@ -53,6 +53,11 @@ apis:
   baseURL: https://app.superlist.com/mcp
   tags:
   - MCP
+  - Task
+  - List
+  - Agents
+  tags_raw:
+  - MCP
   - Tasks
   - Lists
   - Agents
