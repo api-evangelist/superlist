@@ -10,6 +10,17 @@ description: >-
   OAuth 2.0 authorization server (PKCE, dynamic client registration, RFC 8414 / RFC 9728
   discovery). Superlist does not publish a traditional public REST API or OpenAPI; the
   MCP server is the agent-native integration layer.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
