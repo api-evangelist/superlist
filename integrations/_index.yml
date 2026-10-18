@@ -22,3 +22,16 @@
     detected: '2026-10-15'
   status: not-a-workflow
   arazzo: null
+- slug: superlist-slack-own
+  label: Slack (own)
+  partner: slack
+  partner_name: Slack (own)
+  category: Slack app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://slack.com/marketplace/A018HKKQTTR-superlist
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
